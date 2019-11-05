@@ -5,10 +5,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
-class HomeController extends AbstractController
+class AboutController extends AbstractController
 {
     public function index(): Response
     {
-        return $this->render('pages/home.html.twig');
+        return $this->render('pages/about.html.twig');
     }
 }
