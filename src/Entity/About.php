@@ -36,6 +36,11 @@ class About
      */
     private $signature;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $creat_at;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +90,18 @@ class About
     public function setSignature(string $signature): self
     {
         $this->signature = $signature;
+
+        return $this;
+    }
+
+    public function getCreatAt(): ?\DateTimeInterface
+    {
+        return $this->creat_at;
+    }
+
+    public function setCreatAt(?\DateTimeInterface $creat_at): self
+    {
+        $this->creat_at = $creat_at;
 
         return $this;
     }
