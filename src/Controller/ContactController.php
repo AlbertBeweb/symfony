@@ -9,6 +9,8 @@ class ContactController extends AbstractController
 {
     public function index(): Response
     {
-        return $this->render('pages/contact.html.twig');
+        return $this->render('pages/contact.html.twig', [
+            'current_menu' => 'contact'
+        ]);
     }
 }
