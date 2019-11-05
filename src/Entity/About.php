@@ -29,7 +29,7 @@ class About
     /**
      * @ORM\Column(type="text")
      */
-    private $descripion;
+    private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -40,6 +40,11 @@ class About
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $creat_at;
+
+    public function __construct()
+    {
+        $this->creat_at = new \DateTime();
+    }
 
     public function getId(): ?int
     {
@@ -70,14 +75,14 @@ class About
         return $this;
     }
 
-    public function getDescripion(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descripion;
+        return $this->description;
     }
 
-    public function setDescripion(string $descripion): self
+    public function setDescription(string $description): self
     {
-        $this->descripion = $descripion;
+        $this->description = $description;
 
         return $this;
     }
