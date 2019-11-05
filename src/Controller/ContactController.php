@@ -9,6 +9,7 @@ class ContactController extends AbstractController
     public function index(): Response
     {
         return $this->render('pages/contact.html.twig', [
+            //Permet d'avoir le link de la navbar en active
             'current_menu' => 'contact'
         ]);
     }

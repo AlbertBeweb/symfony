@@ -41,6 +41,26 @@ class About
      */
     private $creat_at;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $about_heading;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mt_about;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $mk_about;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $md_about;
+
     public function __construct()
     {
         $this->creat_at = new \DateTime();
@@ -107,6 +127,54 @@ class About
     public function setCreatAt(?\DateTimeInterface $creat_at): self
     {
         $this->creat_at = $creat_at;
+
+        return $this;
+    }
+
+    public function getAboutHeading(): ?string
+    {
+        return $this->about_heading;
+    }
+
+    public function setAboutHeading(string $about_heading): self
+    {
+        $this->about_heading = $about_heading;
+
+        return $this;
+    }
+
+    public function getMtAbout(): ?string
+    {
+        return $this->mt_about;
+    }
+
+    public function setMtAbout(string $mt_about): self
+    {
+        $this->mt_about = $mt_about;
+
+        return $this;
+    }
+
+    public function getMkAbout(): ?string
+    {
+        return $this->mk_about;
+    }
+
+    public function setMkAbout(string $mk_about): self
+    {
+        $this->mk_about = $mk_about;
+
+        return $this;
+    }
+
+    public function getMdAbout(): ?string
+    {
+        return $this->md_about;
+    }
+
+    public function setMdAbout(string $md_about): self
+    {
+        $this->md_about = $md_about;
 
         return $this;
     }
