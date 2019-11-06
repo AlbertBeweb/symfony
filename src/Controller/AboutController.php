@@ -39,14 +39,14 @@ class AboutController extends AbstractController
         $em->flush();  */
         
         $about = $this->about->findAll();
-        dump($about);
         return $this->render('pages/about.html.twig', [
             //Permet d'avoir le link de la navbar en active
             'current_menu' => 'about',
             //Variable pour le titre et l'onglet
             'title' => 'About',
             //Titre de l'application
-            'appName' => 'StarterKit Symfony 4'
+            'appName' => 'StarterKit Symfony 4',
+            'about' => '$about',
         ]);
     }
 }
