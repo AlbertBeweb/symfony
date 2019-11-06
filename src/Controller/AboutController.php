@@ -43,6 +43,7 @@ class AboutController extends AbstractController
         $em->flush();  
         */
 
+        //Récupère les données de la table about 
         $about = $this->repository->findAll();
         return $this->render('pages/about.html.twig', [
             //Permet d'avoir le link de la navbar en active
@@ -51,7 +52,7 @@ class AboutController extends AbstractController
             'title' => 'About',
             //Titre de l'application
             'appName' => 'StarterKit Symfony 4',
-            
+            //Tableau des données
             'about' => $about,
         ]);
     }

@@ -84,7 +84,7 @@ class About
         return $this;
     }
 
-    public function getSlug()
+    public function getSlug(): ?string
     {
         return (new Slugify())->slugify($this->title);
     }
