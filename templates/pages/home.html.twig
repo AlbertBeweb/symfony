@@ -1,8 +1,7 @@
 {% extends 'base.html.twig' %}
-{% block title 'Home' %}
+{% block title %}{{ appName }} | {{ title }}{% endblock %}
 {% block body %}
-    <div class="container mt-5">
-        <h1>Home</h1>
+        <h1>{{ title }}</h1>
         <p>Qu'est-ce que le Lorem Ipsum?
             Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
             Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme
@@ -71,5 +70,4 @@
             Les sections 1.10.32 et 1.10.33 du "De Finibus Bonorum et Malorum" de Cicéron sont aussi reproduites dans
             leur version originale, accompagnée de la traduction anglaise de H. Rackham (1914).
         </p>
-    </div>
 {% endblock %}

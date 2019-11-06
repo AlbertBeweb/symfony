@@ -10,7 +10,11 @@ class ContactController extends AbstractController
     {
         return $this->render('pages/contact.html.twig', [
             //Permet d'avoir le link de la navbar en active
-            'current_menu' => 'contact'
+            'current_menu' => 'contact',
+            //Variable pour le titre et l'onglet
+            'title' => 'Contact',
+            //Titre de l'application
+            'appName' => 'StarterKit Symfony 4'
         ]);
     }
 }

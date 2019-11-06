@@ -42,7 +42,11 @@ class AboutController extends AbstractController
         dump($about);
         return $this->render('pages/about.html.twig', [
             //Permet d'avoir le link de la navbar en active
-            'current_menu' => 'about'
+            'current_menu' => 'about',
+            //Variable pour le titre et l'onglet
+            'title' => 'About',
+            //Titre de l'application
+            'appName' => 'StarterKit Symfony 4'
         ]);
     }
 }

@@ -10,7 +10,11 @@ class HomeController extends AbstractController
     {
         return $this->render('pages/home.html.twig', [
             //Permet d'avoir le link de la navbar en active
-            'current_menu' => 'home'
+            'current_menu' => 'home',
+            //Variable pour le titre et l'onglet
+            'title' => 'Home',
+            //Titre de l'application
+            'appName' => 'StarterKit Symfony 4'
         ]);
     }
 }
