@@ -3,9 +3,10 @@
 {% endblock %}
 
 {% block body %}
+{% for about in about %}
     <h1>{{ about.title }}</h1>
     <h2>{{ about.subtitle }}</h2>
     <p>{{ about.description }}</p>
-    <p>{{ about.signature }}</p>
-    <p>{{ about.about_heading }}</p>
+    <p class="text-right">{{ about.signature }}</p>
+{% endfor %}
 {% endblock %}

@@ -13,19 +13,23 @@ class AboutController extends AbstractController
     /**
      * @var AboutRepository
      */
-    private $about;
+    private $repository;
+    /**
+     * @var ObjectManager
+     */
+    private $em;
 
-    public function __construct(AboutRepository $about)
+    public function __construct(AboutRepository $repository, ObjectManager $em)
     {
-        $this->about = $about;
+        $this->repository = $repository;
     }
-    public function index(AboutRepository $about): Response
+    public function index(): Response
     {
-        
         /* création de la requête pour vérifié
         les entrées en base de donnée */
 
-        /* $about = new About();
+        /* 
+        $about = new About();
             $about->setTitle('Salut')
                   ->setDescription('Test pour voir si ça fonctionne')
                   ->setSubtitle('coucou')
@@ -36,9 +40,10 @@ class AboutController extends AbstractController
                   ->setMdAbout('Les Md');
         $em = $this->getDoctrine()->getManager();
         $em->persist($about);
-        $em->flush();  */
-        
-        $about = $this->about->findAll();
+        $em->flush();  
+        */
+
+        $about = $this->repository->findAll();
         return $this->render('pages/about.html.twig', [
             //Permet d'avoir le link de la navbar en active
             'current_menu' => 'about',
@@ -46,7 +51,8 @@ class AboutController extends AbstractController
             'title' => 'About',
             //Titre de l'application
             'appName' => 'StarterKit Symfony 4',
-            'about' => '$about',
+            
+            'about' => $about,
         ]);
     }
 }
